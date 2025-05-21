@@ -19,7 +19,7 @@
 |-------------------|-----------------------------------------------------------------------------|
 | Backend API        | ![.NET 9](https://img.shields.io/badge/.NET-9.0-blue) ASP.NET Core Web API |
 | Frontend           | ![Angular](https://img.shields.io/badge/Angular-19.2.0-red) Angular            |
-| Database           | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)             |
+| Database           | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue)             |
 | Background Jobs    | ![Hangfire](https://img.shields.io/badge/Hangfire-Jobs-informational)      |
 | Auth Service       | ASP.NET Identity / IdentityServer                                          |
 | Realtime           | ![SignalR](https://img.shields.io/badge/SignalR-Realtime-brightgreen)      |
