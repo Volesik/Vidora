@@ -32,9 +32,9 @@
 
 ## 🗺️ Roadmap
 
-### Phase 1: Project Initialization & Architecture Design
+### ~~Phase 1: Project Initialization & Architecture Design~~
 - [X] Set up GitHub repo with `README.md`, `.gitignore`
-- [] Set up solution folder structure
+- [X] Set up solution folder structure
 
 ### Phase 2: Infrastructure & Docker Setup
 - [ ] Create `docker-compose.yml` with containers for PostgreSQL, Kafka, Elasticsearch, Grafana, etc.
