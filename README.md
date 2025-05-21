@@ -18,7 +18,7 @@
 | Layer              | Technology                                                                 |
 |-------------------|-----------------------------------------------------------------------------|
 | Backend API        | ![.NET 9](https://img.shields.io/badge/.NET-9.0-blue) ASP.NET Core Web API |
-| Frontend           | ![Angular](https://img.shields.io/badge/Angular-17-red) Angular            |
+| Frontend           | ![Angular](https://img.shields.io/badge/Angular-19.2.0-red) Angular            |
 | Database           | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)             |
 | Background Jobs    | ![Hangfire](https://img.shields.io/badge/Hangfire-Jobs-informational)      |
 | Auth Service       | ASP.NET Identity / IdentityServer                                          |
@@ -33,8 +33,8 @@
 ## 🗺️ Roadmap
 
 ### Phase 1: Project Initialization & Architecture Design
-- [ ] Set up GitHub repo with `README.md`, `.gitignore`
-- [ ] Set up solution folder structure
+- [X] Set up GitHub repo with `README.md`, `.gitignore`
+- [] Set up solution folder structure
 
 ### Phase 2: Infrastructure & Docker Setup
 - [ ] Create `docker-compose.yml` with containers for PostgreSQL, Kafka, Elasticsearch, Grafana, etc.
