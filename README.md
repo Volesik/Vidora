@@ -36,7 +36,7 @@
 - [X] Set up GitHub repo with `README.md`, `.gitignore`
 - [X] Set up solution folder structure
 
-### Phase 2: Infrastructure & Docker Setup
+### ~~Phase 2: Infrastructure & Docker Setup~~
 - [X] Create `docker-compose.yml` with containers for PostgreSQL, Kafka, Elasticsearch, Grafana, etc.
 - [X] Dockerfiles for ASP.NET API, Angular, Hangfire, Auth
 - [X] Configure `.env` for shared variables
