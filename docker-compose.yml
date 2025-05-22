@@ -1,0 +1,80 @@
+services:
+  vidora-postgresql:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - vidora-pgdata:/var/lib/postgresql/data
+
+  vidora-zookeeper:
+    image: bitnami/zookeeper:latest
+    ports:
+      - "2181:2181"
+
+  vidora-kafka:
+    image: bitnami/kafka:latest
+    environment:
+      KAFKA_BROKER_ID: ${KAFKA_BROKER_ID}
+      KAFKA_ZOOKEEPER_CONNECT: vidora-zookeeper:2181
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+    ports:
+      - "9092:9092"
+    depends_on:
+      - vidora-zookeeper
+
+  vidora-elasticsearch:
+    image: elasticsearch:8.7.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+
+  vidora-kibana:
+    image: kibana:8.7.0
+    ports:
+      - "5601:5601"
+    depends_on:
+      - vidora-elasticsearch
+
+  vidora-grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+
+  vidora-backend-api:
+    build: ./backend
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+    depends_on:
+      - vidora-postgresql
+
+  vidora-auth:
+    build: ./auth
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+
+  vidora-hangfire:
+    build: ./hangfire
+    depends_on:
+      - vidora-postgresql
+
+  vidora-frontend:
+    build: ./frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - vidora-backend-api
+
+volumes:
+  vidora-pgdata:

@@ -37,9 +37,9 @@
 - [X] Set up solution folder structure
 
 ### Phase 2: Infrastructure & Docker Setup
-- [ ] Create `docker-compose.yml` with containers for PostgreSQL, Kafka, Elasticsearch, Grafana, etc.
-- [ ] Dockerfiles for ASP.NET API, Angular, Hangfire, Auth
-- [ ] Configure `.env` for shared variables
+- [X] Create `docker-compose.yml` with containers for PostgreSQL, Kafka, Elasticsearch, Grafana, etc.
+- [X] Dockerfiles for ASP.NET API, Angular, Hangfire, Auth
+- [X] Configure `.env` for shared variables
 
 ### Phase 3: Backend Foundation (.NET 9 Web API)
 - [ ] Initialize ASP.NET Core project
